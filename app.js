@@ -47,18 +47,18 @@ app.post("/", function(req, res){
 
         if (response.statusCode === 200) {
             // res.send("Successfully Subscribed!")
-            res.sendFile(__dirname + "/success.html")
+            res.sendFile(__dirname + "/success.html");
         }
         else {
             // res.send("There was an error with signing up. Please try again!")
-            res.sendFile(__dirname + "/failure.html")
+            res.sendFile(__dirname + "/failure.html");
         }
 
 
         response.on("data", function(data){
             console.log(JSON.parse(data));
-        })
-    })
+        });
+    });
 
     request.write(jsonData);
     request.end();
@@ -67,11 +67,12 @@ app.post("/", function(req, res){
 
 app.post("/failure", function(req, res){
     res.redirect("/");
-})
+});
 
 app.listen(process.env.PORT || 3000, function(){
     console.log("Server is running on port 3000");
-})
+});
+
 // app.listen(3000, function(){
 //     console.log("Server is running on port 3000");
 // })
