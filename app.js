@@ -37,10 +37,10 @@ app.post("/", function(req, res){
 
     const jsonData = JSON.stringify(data);
 
-    const url = "https://us9.api.mailchimp.com/3.0/lists/f0edb55766";
+    const url = "https://us9.api.mailchimp.com/3.0/lists/{your_list_id}";
     const options = {
         method: "POST",
-        auth: "archit:62edd0a37a179e51f71340a952f64a7c-us9"
+        auth: "{any_user_name:your_api_id}"
     };
 
     const request = https.request(url, options, function(response){
@@ -78,8 +78,8 @@ app.listen(process.env.PORT || 3000, function(){
 // })
 
 // API Key
-// 62edd0a37a179e51f71340a952f64a7c-us9
+// Make your API key from mailchimp
 
 // List Id
-// f0edb55766
+// Get your list ID from your account after logging in
 
